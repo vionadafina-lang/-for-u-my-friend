@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>for u my friend 🌷</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --blue: #BFE3F5;
+    --blue-deep: #8FCBE8;
+    --yellow: #FFF0AD;
+    --yellow-deep: #FCE07A;
+    --pink: #FFD3E6;
+    --pink-deep: #FFAFCF;
+    --cream: #FFFBF3;
+    --ink: #5b5468;
+    --ink-soft: #8a8296;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 15% 10%, var(--blue) 0%, transparent 45%),
+      radial-gradient(circle at 85% 15%, var(--pink) 0%, transparent 45%),
+      radial-gradient(circle at 50% 90%, var(--yellow) 0%, transparent 50%),
+      var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* floating petals */
+  .petal{
+    position: fixed;
+    top: -40px;
+    font-size: 22px;
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 0;
+    animation-name: fall, sway;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+  }
+  @keyframes fall{
+    from{ transform: translateY(-10vh); }
+    to{ transform: translateY(110vh); }
+  }
+  @keyframes sway{
+    0%,100%{ margin-left: 0; }
+    50%{ margin-left: 40px; }
+  }
+
+  .wrap{
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  .tulip-row{
+    display:flex;
+    justify-content:center;
+    gap: 10px;
+    font-size: 26px;
+    margin-bottom: 6px;
+    user-select:none;
+  }
+
+  header{
+    text-align:center;
+    margin-bottom: 34px;
+  }
+
+  h1{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(48px, 9vw, 84px);
+    margin: 6px 0 4px;
+    background: linear-gradient(90deg, var(--blue-deep), var(--pink-deep) 50%, var(--yellow-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.05;
+  }
+
+  .subtitle{
+    font-size: 15px;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* music card */
+  .music-card{
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 24px;
+    padding: 18px 20px;
+    margin: 0 auto 34px;
+    max-width: 480px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(180, 160, 200, 0.18);
+    text-align:center;
+  }
+  .music-card p{
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .music-card iframe{
+    border-radius: 14px;
+    width: 100%;
+  }
+
+  /* letter box */
+  .letter{
+    background: #fffefb;
+    border-radius: 26px;
+    padding: 40px 34px;
+    position: relative;
+    box-shadow:
+      0 18px 40px rgba(190, 170, 210, 0.25),
+      0 2px 0 var(--pink-deep) inset;
+    border: 2px dashed var(--pink-deep);
+    margin-bottom: 44px;
+  }
+  .letter::before{
+    content: "🌷";
+    position:absolute;
+    top: -22px;
+    left: 26px;
+    font-size: 34px;
+    transform: rotate(-15deg);
+  }
+  .letter::after{
+    content: "🌷";
+    position:absolute;
+    top: -22px;
+    right: 26px;
+    font-size: 34px;
+    transform: rotate(15deg) scaleX(-1);
+  }
+  .letter p{
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin: 0 0 16px;
+  }
+  .letter p:last-child{ margin-bottom: 0; }
+  .letter strong{
+    color: #d3628f;
+    font-weight: 700;
+  }
+  .signoff{
+    text-align:right;
+    font-family:'Caveat', cursive;
+    font-size: 26px;
+    color: var(--blue-deep);
+    margin-top: 18px;
+  }
+
+  /* game section */
+  .game-section{
+    text-align:center;
+    margin-bottom: 46px;
+  }
+  .game-section h2{
+    font-family:'Caveat', cursive;
+    font-size: 34px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .game-section .hint{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .garden{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 460px;
+    margin: 0 auto 16px;
+  }
+  .pot{
+    aspect-ratio: 1;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fff, #fdf3e9);
+    border: 2px solid var(--yellow-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 30px;
+    cursor:pointer;
+    transition: transform .18s ease, background .3s ease;
+    user-select:none;
+  }
+  .pot:hover{ transform: translateY(-3px) scale(1.04); }
+  .pot.bloomed{
+    background: linear-gradient(180deg, #ffe6f1, #fff0d8);
+    border-color: var(--pink-deep);
+    animation: pop .35s ease;
+  }
+  @keyframes pop{
+    0%{ transform: scale(0.7) rotate(-8deg); }
+    60%{ transform: scale(1.15) rotate(4deg); }
+    100%{ transform: scale(1) rotate(0deg); }
+  }
+  .score{
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .garden-message{
+    font-family:'Caveat', cursive;
+    font-size: 26px;
+    color: #d3628f;
+    min-height: 34px;
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .garden-message.show{ opacity: 1; }
+
+  footer{
+    text-align:center;
+    font-family:'Caveat', cursive;
+    font-size: clamp(26px, 5vw, 36px);
+    color: var(--blue-deep);
+    padding-top: 10px;
+    border-top: 2px dotted var(--pink-deep);
+    line-height: 1.4;
+  }
+
+  .tulip-row.bottom{ margin-top: 18px; margin-bottom: 0; }
+
+  @media (prefers-reduced-motion: reduce){
+    .petal{ animation: none; display:none; }
+    .pot.bloomed{ animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="tulip-row">🌷 🌼 🌷 🌸 🌷</div>
+<header>
+<div class="subtitle">a little page, just for you</div>
+<h1>for u my friend</h1>
+</header>
+<div class="music-card">
+<p>🎵 press play for our song while you read</p>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="120" loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/avisheh/taylor-swift-dorothea-slowed&amp;color=%23ffd3e6&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false" width="100%">
+</iframe>
+</div>
+<div class="letter">
+<p><strong>halloww linn,</strong></p>
+<p>ga nyangka ya, ternyata kita udah sampai di titik di mana kita harus lanjut sekolah di tempat yang beda. jujur aku masih susah ngebayangin kalau nanti ga bisa ketemu kamu hampir setiap hari, ga ada lagi cerita random di sekolah, ketawa gara-gara hal receh, atau sekadar ngobrol sebentar pas istirahat. <strong>thank you for being one of the best chapters of my school life.</strong> makasih udah selalu ada, udah mau dengerin cerita-ceritaku, dan udah jadi teman yang bikin hari-hari biasa terasa lebih seru.</p>
+<p>oh iya, aku juga mau minta maaf ya kalau selama kita temenan aku pernah bikin kamu kesel, kecewa, atau ada kata-kata dan sikapku yang tanpa sadar nyakitin hati kamu. <strong>i'm sorry for every little mistake i made. i never meant to hurt someone who means so much to me.</strong></p>
+<p>meskipun nanti kita ada di sekolah yang berbeda, aku harap itu ga bikin kita jadi asing. <strong>distance may change our routines, but it should never change our friendship.</strong> semangat ya buat sekolah barunya. aku yakin kamu bakal ketemu banyak orang baik, belajar banyak hal baru, dan jadi versi terbaik dari diri kamu. jangan lupa istirahat, jangan kebanyakan mikir, dan tetap jadi linn yang aku kenal.</p>
+<p>kalau nanti capek, inget aja kalau selalu ada orang yang bangga sama semua usaha kamu. <strong>no matter where life takes us, you'll always have a special place in my heart as my favorite partner in crime.</strong> see you in every "nanti ya", karena aku yakin perpisahan ini cuma soal tempat, bukan soal persahabatan kita. 🤍</p>
+<div class="signoff">— your friend, always 🌷</div>
+</div>
+<div class="game-section">
+<h2>plant a little garden for us 🌱</h2>
+<div class="hint">tap each pot to grow a tulip — one for every memory</div>
+<div class="score">planted: <span id="score">0</span> / 12</div>
+<div class="garden" id="garden"></div>
+<div class="garden-message" id="gardenMsg">a whole garden, just like our friendship 🌷</div>
+</div>
+<div class="tulip-row bottom">🌸 🌷 🌼 🌷 🌸</div>
+<footer>
+    thank you for ever wanting to be<br/>one of my friends in middle school. 🤍
+  </footer>
+</div>
+<script>
+  // floating petals
+  const petals = ['🌷','🌸','🌼','💮'];
+  const petalCount = 18;
+  for(let i=0;i<petalCount;i++){
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = petals[Math.floor(Math.random()*petals.length)];
+    p.style.left = Math.random()*100 + 'vw';
+    const duration = 10 + Math.random()*12;
+    const swayDuration = 3 + Math.random()*3;
+    p.style.animationDuration = duration + 's, ' + swayDuration + 's';
+    p.style.animationDelay = (Math.random()*-20) + 's, 0s';
+    p.style.fontSize = (16 + Math.random()*14) + 'px';
+    document.body.appendChild(p);
+  }
+
+  // tulip planting mini game
+  const garden = document.getElementById('garden');
+  const scoreEl = document.getElementById('score');
+  const gardenMsg = document.getElementById('gardenMsg');
+  const total = 12;
+  let planted = 0;
+
+  for(let i=0;i<total;i++){
+    const pot = document.createElement('div');
+    pot.className = 'pot';
+    pot.textContent = '🪴';
+    pot.addEventListener('click', () => {
+      if(pot.classList.contains('bloomed')) return;
+      pot.classList.add('bloomed');
+      pot.textContent = '🌷';
+      planted++;
+      scoreEl.textContent = planted;
+      if(planted === total){
+        gardenMsg.classList.add('show');
+      }
+    });
+    garden.appendChild(pot);
+  }
+</script>
+</body>
+</html>
